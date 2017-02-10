@@ -3,3 +3,10 @@ r: bioc-release
 use_bioc: true
 bioc_required: true
 cache: packages
+
+# Code Coverage
+r_github_packages:
+  - jimhester/covr
+
+after_success:
+  - Rscript -e 'covr::codecov()'
