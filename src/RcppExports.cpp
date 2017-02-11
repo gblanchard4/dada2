@@ -144,6 +144,17 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
+// C_matrixEE
+Rcpp::NumericVector C_matrixEE(Rcpp::IntegerMatrix inp);
+RcppExport SEXP dada2_C_matrixEE(SEXP inpSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< Rcpp::IntegerMatrix >::type inp(inpSEXP);
+    rcpp_result_gen = Rcpp::wrap(C_matrixEE(inp));
+    return rcpp_result_gen;
+END_RCPP
+}
 // C_nwvec
 Rcpp::CharacterVector C_nwvec(std::vector<std::string> s1, std::vector<std::string> s2, int16_t match, int16_t mismatch, int16_t gap_p, int band, bool endsfree);
 RcppExport SEXP dada2_C_nwvec(SEXP s1SEXP, SEXP s2SEXP, SEXP matchSEXP, SEXP mismatchSEXP, SEXP gap_pSEXP, SEXP bandSEXP, SEXP endsfreeSEXP) {
