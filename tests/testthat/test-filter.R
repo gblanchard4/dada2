@@ -25,7 +25,7 @@ test_that("Distinct Output Files", {
 	expect_error(filterAndTrim(c(sam1F.fastq, sam1R.fastq), c(samefile, samefile)), "All output files must be distinct.")
 })
 test_that("Output files for the reverse reads are required.", {
-	expect_error(filterAndTrim(c(sam1F.fastq, sam1R.fastq), c(out1, out2), rev=TRUE), "Output files for the reverse reads are required.")
+	expect_error(filterAndTrim(fwd=c(sam1F.fastq, sam1R.fastq), filt=c(out1, out2), rev=TRUE), "Output files for the reverse reads are required.")
 })
 
 
